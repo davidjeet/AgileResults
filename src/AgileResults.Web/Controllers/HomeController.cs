@@ -5,20 +5,25 @@ using System.Threading.Tasks;
 using AgileResults.Web.Models;
 using AgileResults.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace AgileResults.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IRepository _repository;
+        private readonly ILogger _logger;
 
-        public HomeController(IRepository repository)
+        public HomeController(IRepository repository, ILoggerFactory loggerFactory)
         {
             this._repository = repository;
+            this._logger = loggerFactory.CreateLogger(typeof(HomeController));
         }
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Hello from Home controller!");
+            _logger.LogWarning("Will this work!!!!!");
             return View();
         }
 
