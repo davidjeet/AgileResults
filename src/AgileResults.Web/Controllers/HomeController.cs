@@ -50,7 +50,6 @@ namespace AgileResults.Web.Controllers
             return View("About");
         }
 
-
         public IActionResult Error()
         {
             return View();
