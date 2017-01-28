@@ -68,14 +68,14 @@ namespace AgileResults.Web
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            loggerFactory.AddFile("Logs/ts-{Date}.txt");
+            ////loggerFactory.AddFile("Logs/ts-{Date}.txt");
 
-            //add NLog to .NET Core
-            loggerFactory.AddNLog();
-            //Enable ASP.NET Core features (NLog.web) - only needed for ASP.NET Core users
-            app.AddNLogWeb();
-            //needed for non-NETSTANDARD platforms: configure nlog.config in your project root. NB: you need NLog.Web.AspNetCore package for this. 
-            env.ConfigureNLog("nlog.config");
+            //////add NLog to .NET Core
+            ////loggerFactory.AddNLog();
+            //////Enable ASP.NET Core features (NLog.web) - only needed for ASP.NET Core users
+            ////app.AddNLogWeb();
+            //////needed for non-NETSTANDARD platforms: configure nlog.config in your project root. NB: you need NLog.Web.AspNetCore package for this. 
+            ////env.ConfigureNLog("nlog.config");
 
             if (env.IsDevelopment())
             {
