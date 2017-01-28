@@ -1,15 +1,20 @@
 {
-  "version": "1.0.0-*",
+    "version": "1.0.0-*",
 
     "dependencies": {
         "AgileResults.Common": "1.0.0-*",
         "AgileResults.SqlRepository": "1.0.0-*",
-        "NETStandard.Library": "1.6.0"
+        "NETStandard.Library": "1.6.1"
     },
 
-  "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
+    "frameworks": {
+        "netstandard1.6": {
+            "imports": "dnxcore50"
+        }
+    },
+
+    "runtimes": {
+        "win10-x64": {}
     }
-  }
+
 }
