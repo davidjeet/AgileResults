@@ -1,5 +1,5 @@
 {
-  "userSecretsId": "aspnet-AgileResults.Web-792e4200-5929-4be8-ac9c-9e798080137e",
+    "userSecretsId": "aspnet-AgileResults.Web-792e4200-5929-4be8-ac9c-9e798080137e",
 
     "dependencies": {
         "Microsoft.NETCore.App": {
@@ -52,52 +52,59 @@
         "AgileResults.DataLayer": "1.0.0-*"
     },
 
-  "tools": {
-    "BundlerMinifier.Core": "2.0.238",
-    "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
-    "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
-    "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview2-final",
-    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
-      "version": "1.0.0-preview2-final",
-      "imports": [
-        "portable-net45+win8"
-      ]
+    "tools": {
+        "BundlerMinifier.Core": "2.0.238",
+        "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
+        "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
+        "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
+        "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview2-final",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
+            "version": "1.0.0-preview2-final",
+            "imports": [
+                "portable-net45+win8"
+            ]
+        }
+    },
+
+    "frameworks": {
+        "netcoreapp1.0": {
+            "imports": [
+                "dotnet5.6",
+                "portable-net45+win8"
+            ]
+        }
+    },
+
+    "buildOptions": {
+        "emitEntryPoint": true,
+        "preserveCompilationContext": true
+    },
+
+    "runtimeOptions": {
+        "configProperties": {
+            "System.GC.Server": true
+        }
+    },
+
+    "publishOptions": {
+        "include": [
+            "wwwroot",
+            "**/*.cshtml",
+            "appsettings.json",
+            "nlog.config",
+            "web.config"
+        ]
+    },
+
+    "scripts": {
+        "prepublish": [ "bower install", "dotnet bundle" ],
+        "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    },
+
+    "runtimes": {
+        "win10-x64": {},
+        "win81-x64": {},
+        "win8-x64": {},
+        "win7-x64": {}
     }
-  },
-
-  "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [
-        "dotnet5.6",
-        "portable-net45+win8"
-      ]
-    }
-  },
-
-  "buildOptions": {
-    "emitEntryPoint": true,
-    "preserveCompilationContext": true
-  },
-
-  "runtimeOptions": {
-    "configProperties": {
-      "System.GC.Server": true
-    }
-  },
-
-  "publishOptions": {
-    "include": [
-        "wwwroot",
-        "**/*.cshtml",
-        "appsettings.json",
-        "nlog.config",
-        "web.config"
-    ]
-  },
-
-  "scripts": {
-    "prepublish": [ "bower install", "dotnet bundle" ],
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
-  }
 }
